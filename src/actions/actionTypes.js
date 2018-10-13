@@ -1,2 +1,3 @@
-export const FETCH_USER = 'FETCH_USER';
-export const RECEIVE_USER = 'RECEIVE_USER';
+export const FETCH_USERS = 'FETCH_USERS';
+export const RECEIVE_USERS = 'RECEIVE_USERS';
+export const FETCH_USERS_ERROR = 'FETCH_USERS_ERROR';
