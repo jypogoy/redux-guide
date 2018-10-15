@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
-import UserList from './components/UserList';
+//import UserList from './components/UserList';
+import PostList from './components/PostList';
 
 class App extends Component {
   render() {
     return (            
       <div className="App">
-        <UserList />
+        <PostList />
       </div>
       // <div className="App">
       //   <header className="App-header">

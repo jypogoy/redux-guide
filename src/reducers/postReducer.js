@@ -1,50 +1,46 @@
 export default function reducer(state = {
-        users: {
-            id: null,
-            name: null,
-            ade: null
-        },
+        posts: [],
         fetching: false,
         fetched: false,
         error: null
     }, action) {
 
     switch (action.type) {
-        case 'FETCH_USERS':
+        case 'FETCH_POSTS':
             return {...state, fetching: true};
      
-        case 'FETCH_USERS_REJECTED':
+        case 'FETCH_POSTS_REJECTED':
             return {...state, fetching: false, error: action.payload};                 
 
-        case 'FETCH_USERS_FULFILLED':
+        case 'FETCH_POSTS_FULFILLED':
             return {
                 ...state, 
                 fetching: false,
                 fetched: true,
-                users: action.payload
+                posts: action.payload
             };        
      
-        case 'SET_USER_NAME':
+        case 'ADD_POST':
             return {
                 ...state,
-                user: [...state.user, action.payload]
+                posts: [...state.posts, action.payload]
             }    
 
-        case 'SET_USER_AGE':
+        case 'UPDATE_POST':
             const {id, text} = action.payload;
-            const newUsers = [...state.users];
-            const userToUpdate = newUsers.findIndex(user => user.id === id);
-            newUsers[userToUpdate] = action.payload;    
+            const newPosts = [...state.posts];
+            const postToUpdate = newPosts.findIndex(post => post.id === id);
+            newPosts[postToUpdate] = action.payload;    
 
             return {
                 ...state,
-                users: newUsers
+                posts: newPosts
             }
 
-        case 'DELETE_USER':
+        case 'DELETE_POST':
             return {
                 ...state,
-                users: state.users.filter(user => user.id !== action.payload)
+                posts: state.posts.filter(post => post.id !== action.payload)
             }    
 
         default:
