@@ -29,7 +29,7 @@ class PostList extends Component {
                             return (
                               this.renderData(item)
                             );      
-                        })
+                        }) 
                     } */}
                 </div>
             );
@@ -39,10 +39,11 @@ class PostList extends Component {
 
 PostList.propTypes = {
     postActions: PropTypes.object,
-    posts: PropTypes.array
+    //posts: PropTypes.array
 };
 
 function mapStateToProps(state) {
+    console.log(state.posts)
     return {
         posts: state.posts
     };
